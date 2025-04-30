@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="true">
+
+    <FrameLayout
+        android:id="@+id/test1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/purple_200"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <TextView
+            android:id="@+id/test1text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@+id/test2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/teal_700"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <TextView
+                android:id="@+id/test2text"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@+id/test3"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@color/teal_200"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <TextView
+                    android:id="@+id/test3text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </FrameLayout>
+    </FrameLayout>
+</FrameLayout>

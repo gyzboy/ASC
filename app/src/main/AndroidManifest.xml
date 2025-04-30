@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gyz.androidsamplecode">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AndroidSampleCode"
+        >
+        <service
+            android:name=".communication.messagener.MessengerService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".component.service.ASCService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Entry"
+            android:exported="true"
+            android:label="Entry"
+            android:theme="@style/Theme.AndroidSampleCode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AndroidEntryActivity"
+            android:exported="true"
+            android:label="@string/android"
+            android:theme="@style/Theme.AndroidSampleCode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="Entry" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".JavaEntryActivity"
+            android:exported="true"
+            android:label="@string/java"
+            android:theme="@style/Theme.AndroidSampleCode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="Entry" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.ASCComponentActivity"
+            android:exported="true"
+            android:label="四大组件">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="AndroidSampleCode" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".communication.ASCCommActivity"
+            android:exported="true"
+            android:label="通信">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="AndroidSampleCode" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".render.ASCRenderActivity"
+            android:exported="true"
+            android:label="渲染">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="AndroidSampleCode" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.activity.ASCActivity"
+            android:exported="true"
+            android:label="Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="ASCComponent" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.activity.activityinfos.ASCActivityInfo"
+            android:exported="true"
+            android:label="ActivityInfo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="ASCActivity" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.activity.affinity.OneActivity"
+            android:exported="true"
+            android:label="Affinity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="ASCActivity" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.activity.affinity.SecondActivity"
+            android:taskAffinity="om.example.newtask" />
+        <activity
+            android:name=".component.activity.feature.ASCWindowFeature"
+            android:exported="true"
+            android:label="WindowFeature">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="ASCActivity" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.activity.launchmode.ASCLaunchMode"
+            android:exported="true"
+            android:label="LaunchMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="ASCActivity" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".component.activity.launchmode.Standard" />
+        <activity
+            android:name=".component.activity.launchmode.SingleTop"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".component.activity.launchmode.SingleTask"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".component.activity.launchmode.SingleInstance"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".component.activity.lifecycle.ActivityA"
+            android:exported="true"
+            android:label="LifeCycle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="ASCActivity" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".component.activity.lifecycle.ActivityB" />
+        <activity
+            android:name=".component.activity.softInput.ASCActivitySoftInput"
+            android:exported="true"
+            android:label="SoftInput">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="ASCActivity" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.service.ASCServiceActivity"
+            android:exported="true"
+            android:label="Service">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="ASCComponent" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.broadcast.ASCBroadcastActivity"
+            android:exported="true"
+            android:label="BroadCast">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="ASCComponent" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".store.ASCStoreActivity"
+            android:exported="true"
+            android:label="存储">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="AndroidSampleCode" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".gesture.ASCGestureActivity"
+            android:exported="true"
+            android:label="手势">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="AndroidSampleCode" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".system.ASCSystemActivity"
+            android:exported="true"
+            android:label="系统">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="AndroidSampleCode" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".communication.aidl.ExampleService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.gyz.androidsamplecode.aidl.ExampleService" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".component.broadcast.StaticReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="STATIC_BROADCAST" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 public class SingleTask extends Activity {
 //    描述：该模式确保Activity在任务栈中只有一个实例。如果实例已经存在，则将其上方的所有Activity出栈，

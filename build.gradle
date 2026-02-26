@@ -1,6 +1,9 @@
 
 buildscript {
     repositories {
+        maven {
+            url "http://pixel.sankuai.com/repository/mtdp"
+        }
         google()
         mavenCentral()
     }
@@ -13,6 +16,9 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url "http://pixel.sankuai.com/repository/mtdp"
+        }
         google()
         mavenCentral()
     }

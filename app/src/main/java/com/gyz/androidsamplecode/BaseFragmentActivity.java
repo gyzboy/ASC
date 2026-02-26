@@ -2,26 +2,20 @@ package com.gyz.androidsamplecode;
 
 import android.os.Bundle;
 import android.os.Trace;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 
-import com.gyz.androidsamplecode.communication.aidl.ASCAIDLFragment;
-import com.gyz.androidsamplecode.communication.handler.ASCHandlerFragment;
-import com.gyz.androidsamplecode.communication.intent.ASCIntentFragment;
-import com.gyz.androidsamplecode.communication.messagener.ASCMessengerFragment;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.TreeMap;
 
 public class BaseFragmentActivity extends FragmentActivity {
    protected LinkedHashMap<String, Fragment> fragmentTreeMap = new LinkedHashMap<>();

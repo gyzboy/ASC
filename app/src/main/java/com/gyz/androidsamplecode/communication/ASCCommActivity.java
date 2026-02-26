@@ -3,7 +3,8 @@ package com.gyz.androidsamplecode.communication;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
+
+import androidx.annotation.RequiresApi;
 
 import com.gyz.androidsamplecode.BaseFragmentActivity;
 import com.gyz.androidsamplecode.communication.aidl.ASCAIDLFragment;

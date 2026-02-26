@@ -1,5 +1,6 @@
 package com.gyz.androidsamplecode;
 
+import android.content.Context;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -55,5 +56,29 @@ public class ASCUtil {
       } catch (IOException e) {
          e.printStackTrace();
       }
+   }
+
+   // 获取标题栏高度
+   public static int getStatusBarHeight(Context context) {
+      int result = 0;
+      int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+      if (resourceId > 0) {
+         result = context.getResources().getDimensionPixelSize(resourceId);
+      }
+      return result;
+   }
+
+   // 获取导航栏高度
+   public static int getNavigationBarHeight(Context context) {
+      int result = 0;
+      int resourceId = context.getResources().getIdentifier(
+              "navigation_bar_height",
+              "dimen",
+              "android"
+      );
+      if (resourceId > 0) {
+         result = context.getResources().getDimensionPixelSize(resourceId);
+      }
+      return result;
    }
 }

@@ -1,10 +1,11 @@
 package com.gyz.androidsamplecode.render.view;
 
 import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 
+import androidx.annotation.Nullable;
 
 import com.gyz.androidsamplecode.BaseFragment;
 

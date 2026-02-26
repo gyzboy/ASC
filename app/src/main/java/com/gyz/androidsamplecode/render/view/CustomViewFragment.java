@@ -1,18 +1,16 @@
 package com.gyz.androidsamplecode.render.view;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.util.Log;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -36,7 +34,7 @@ public class CustomViewFragment extends BaseFragment {
         opts.add("LayoutParams解析");
         opts.add("指定图层类型");
         opts.add("性能优化手段");
-        opts.add("测试 API 返回值");
+        opts.add("测试坐标获取返回值");
     }
 
     @Override
@@ -115,12 +113,36 @@ public class CustomViewFragment extends BaseFragment {
                         Rect rect1 = new Rect();
                         Rect rect2 = new Rect();
                         Rect rect3 = new Rect();
+                        Rect rect4 = new Rect();
                         layout1.getGlobalVisibleRect(rect1);
-                        layout2.getGlobalVisibleRect(rect2);
-                        layout3.getGlobalVisibleRect(rect3);
-                        text1.setText(rect1.toString());
-                        text2.setText(rect2.toString());
-                        text3.setText(rect3.toString());
+                        layout1.getLocalVisibleRect(rect2);
+                        int[] location = new int[2];
+                        int[] location2 = new int[2];
+                        layout1.getLocationInWindow(location);
+                        layout1.getLocationOnScreen(location2);
+                        rect3.left = location[0];
+                        rect3.top = location[1];
+                        rect3.right = rect3.left + layout1.getWidth();
+                        rect3.bottom = rect3.top + layout1.getHeight();
+
+                        rect4.left = location2[0];
+                        rect4.top = location2[1];
+                        rect4.right = rect4.left + layout1.getWidth();
+                        rect4.bottom = rect4.top + layout1.getHeight();
+//                        layout2.getGlobalVisibleRect(rect2);
+//                        layout3.getGlobalVisibleRect(rect3);
+//                        text1.setText(rect1.toString());
+//                        text2.setText(rect2.toString());
+//                        text3.setText(rect3.toString());
+                        System.out.println("gyz123 getGlobalVisibleRect = " + rect1 + " getLocalVisibleRect = " + rect2 + " getLocationInWindow = " + rect3 + " getLocationOnScreen = " + rect4);
+                        System.out.println("gyz123 getStatusBarHeight = " + ASCUtil.getStatusBarHeight(getActivity()) + " getNavigationBarHeight = " + ASCUtil.getNavigationBarHeight(getActivity()));
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                int[] location = new int[2];
+                                layout1.getLocationInWindow(location);
+                            }
+                        }).start();
                     }
                 });
                 break;

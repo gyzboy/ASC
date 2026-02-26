@@ -4,12 +4,9 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.gyz.androidsamplecode.BaseFragment;
-import com.gyz.androidsamplecode.render.view.CustomViewFragment;
-import com.gyz.androidsamplecode.render.view.ImageFragment;
-import com.gyz.androidsamplecode.render.view.TextViewFragment;
 
 public class ProcessFragment extends BaseFragment {
 

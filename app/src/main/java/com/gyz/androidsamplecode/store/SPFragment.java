@@ -4,10 +4,9 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
+import androidx.annotation.Nullable;
+
 import android.view.View;
-import android.view.ViewGroup;
 
 
 import com.gyz.androidsamplecode.BaseFragment;

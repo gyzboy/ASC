@@ -2,8 +2,8 @@ package com.gyz.androidsamplecode.render.viewrootimpl;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.Choreographer;
+import androidx.annotation.Nullable;
+
 import android.view.View;
 
 

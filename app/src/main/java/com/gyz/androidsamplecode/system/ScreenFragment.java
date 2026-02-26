@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.gyz.androidsamplecode.BaseFragment;
 

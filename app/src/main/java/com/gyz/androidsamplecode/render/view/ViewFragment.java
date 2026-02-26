@@ -1,6 +1,8 @@
 package com.gyz.androidsamplecode.render.view;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 
@@ -18,12 +20,14 @@ public class ViewFragment extends BaseFragment {
       opts.add("ImageView");
       opts.add("ScrollView");
       opts.add("RecyclerView");
+      opts.add("FrameLayout");
 
       optFragments.add(new CustomViewFragment());
       optFragments.add(new TextViewFragment());
       optFragments.add(new ImageFragment());
       optFragments.add(new ScrollerFragment());
       optFragments.add(new RecyclerViewFragment());
+      optFragments.add(new FrameLayoutFragment());
    }
 
    @Override

@@ -2,10 +2,9 @@ package com.gyz.androidsamplecode.store;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
+import androidx.annotation.Nullable;
+
 import android.view.View;
-import android.view.ViewGroup;
 
 
 import com.gyz.androidsamplecode.BaseFragment;
@@ -15,7 +14,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;

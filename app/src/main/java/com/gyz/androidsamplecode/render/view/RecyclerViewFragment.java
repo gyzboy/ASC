@@ -1,14 +1,13 @@
 package com.gyz.androidsamplecode.render.view;
 
 import android.annotation.SuppressLint;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -23,6 +22,7 @@ public class RecyclerViewFragment extends BaseFragment {
 
     private RecyclerView recyclerView;
     private final ArrayList<String> data = new ArrayList<>();
+    private final static int ITEM_COUNT = 10;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,6 +32,8 @@ public class RecyclerViewFragment extends BaseFragment {
         recyclerView.setLayoutManager(linearLayoutManager);
         MyAdapter adapter = new MyAdapter();
         recyclerView.setAdapter(adapter);
+        linearLayoutManager.setItemPrefetchEnabled(false);
+        recyclerView.setRecycledViewPool(new MyViewPool());
         recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
@@ -45,11 +47,11 @@ public class RecyclerViewFragment extends BaseFragment {
                 super.onScrollStateChanged(recyclerView, newState);
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     System.out.println("gy123 cacheView | " + getCachedViewHolders(recyclerView));
-                    System.out.println("gy123 attachedView | " + getAttachedViewHolders(recyclerView));
+//                    System.out.println("gy123 attachedView | " + getAttachedViewHolders(recyclerView));
                 }
             }
         });
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < ITEM_COUNT; i++) {
             data.add("item -" + i);
         }
     }
@@ -71,17 +73,26 @@ public class RecyclerViewFragment extends BaseFragment {
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             TextView textView = new TextView(getContext());
-            textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300));
+            textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 800));
             textView.setBackgroundColor(Color.RED);
             MyViewHolder holder = new MyViewHolder(textView);
             System.out.println("gy123 createHolder | " + holder);
             return holder;
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
-        public void onBindViewHolder(MyViewHolder holder, int position) {
+        public void onBindViewHolder(MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
             System.out.println("gy123 bindViewHolder | " + holder + " | " + position);
-            ((TextView) holder.itemView).setText(data.get(position));
+            ((TextView) holder.itemView).setText(data.get(position) +"holder |" + holder);
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    notifyItemRemoved(position);
+                    data.remove(position);
+                    System.out.println("gy123 onClick | " + getAttachedViewHolders(recyclerView));
+                }
+            });
         }
 
         @Override
@@ -136,5 +147,27 @@ public class RecyclerViewFragment extends BaseFragment {
         Field cachedViewsField = recycler.getClass().getDeclaredField("mAttachedScrap");
         cachedViewsField.setAccessible(true);
         return (ArrayList<RecyclerView.ViewHolder>) cachedViewsField.get(recycler);
+    }
+
+    private class MyViewPool extends RecyclerView.RecycledViewPool {
+        @Override
+        public void putRecycledView(RecyclerView.ViewHolder scrap) {
+            super.putRecycledView(scrap);
+            System.out.println("gy123 putRecycledView | " + scrap);
+        }
+
+        @Override
+        public int getRecycledViewCount(int viewType) {
+            int count = super.getRecycledViewCount(viewType);
+            System.out.println("gy123 getRecycledViewCount | " + count);
+            return count;
+        }
+
+        @Override
+        public RecyclerView.ViewHolder getRecycledView(int viewType) {
+            RecyclerView.ViewHolder holder = super.getRecycledView(viewType);
+            System.out.println("gy123 getRecycledView | " + holder);
+            return holder;
+        }
     }
 }

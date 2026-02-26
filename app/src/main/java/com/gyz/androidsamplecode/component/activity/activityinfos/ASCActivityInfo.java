@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.gyz.androidsamplecode.component.activity.ASCActivityUtil;
 

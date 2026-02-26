@@ -2,15 +2,15 @@ package com.gyz.androidsamplecode.gesture.click;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.view.MotionEvent;
+import androidx.annotation.NonNull;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.gyz.androidsamplecode.BaseFragment;
 
